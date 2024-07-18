@@ -31,5 +31,5 @@ body {
 }
 
 .btn {
-  @apply text-white text-center bg-black rounded-full;
+  @apply text-white bg-black rounded-full;
 }
