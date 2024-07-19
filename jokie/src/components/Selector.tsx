@@ -3,8 +3,8 @@
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
-import { useEffect, useState } from 'react';
-import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Loading from './Loading';
 
