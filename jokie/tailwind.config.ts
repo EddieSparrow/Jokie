@@ -18,8 +18,8 @@ const config: Config = {
         arrow: "url('/arrow.svg')",
       },
       screens: {
-        sm: '430px',
-        md: '1512px',
+        sm: '0',
+        md: '431px',
       },
     },
   },
