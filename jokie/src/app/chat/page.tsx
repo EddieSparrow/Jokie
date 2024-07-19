@@ -26,7 +26,6 @@ export default function Chat() {
 
   const mutation = useMutation({
     mutationFn: async () => {
-      setIsLoading(true);
       const { data } = await axios.get(`https://official-joke-api.appspot.com/jokes/${selected}/random`);
       return data;
     },
@@ -42,23 +41,24 @@ export default function Chat() {
   });
 
   function handleGetJoke() {
+    setIsLoading(true);
     setMessages((prevMessages) => [...prevMessages, { setup: '', punchline: '', typeJoke: selected } as Messages]);
     mutation.mutate();
   }
 
   return (
-    <main className="flex flex-col bg-main-gradient min-h-screen p-[30px] pb-[25px] align-center justify-between max-h-screen">
+    <main className="flex flex-col bg-main-gradient min-h-screen pb-[25px] pt-[30px] px-[30px] md:p-[30px] align-center justify-between max-h-screen">
       <div className="flex justify-between">
         <Link href="/">
           <button className="btn text-center w-[50px] h-[50px] bg-arrow bg-auto bg-no-repeat bg-center" />
         </Link>
         <Selector selected={selected} setSelected={setSelected}></Selector>
       </div>
-      <div className="flex-grow overflow-auto">
+      <div className="flex flex-col flex-grow overflow-auto justify-end">
         <ChatWindow messages={messages} />
       </div>
       {!isLoading && selected ? (
-        <button className="btn text-center h-[3.75rem] text-[2rem] mt-[30px]" onClick={handleGetJoke}>
+        <button className="btn text-center text-[2rem] mt-[2.5rem] md:mt-[1.875rem] h-[60px] md:ml-[0.5rem] shrink-0" onClick={handleGetJoke}>
           Get joke
         </button>
       ) : (

@@ -33,3 +33,15 @@ body {
 .btn {
   @apply text-white bg-black rounded-full;
 }
+
+.message-container {
+  @apply flex flex-col w-max p-3 rounded-[10px] bg-white min-h-[4.5rem] max-w-full sm:min-w-full md:min-w-0 leading-[1.1875rem] gap-2.5;
+}
+
+.message-name {
+  @apply text-black text-base font-semibold leading-[1.1875rem];
+}
+
+.message-text {
+  @apply text-black font-normal leading-[1.1875rem];
+}

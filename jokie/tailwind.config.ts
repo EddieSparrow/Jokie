@@ -18,6 +18,7 @@ const config: Config = {
         arrow: "url('/arrow.svg')",
       },
       screens: {
+        sm: '430px',
         md: '1512px',
       },
     },
