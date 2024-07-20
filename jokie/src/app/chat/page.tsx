@@ -1,13 +1,13 @@
 'use client';
 
-import Selector from '@/components/Selector';
+import Selector from '@/components/selector/Selector';
 import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
-import { use, useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from 'react';
 import ChatWindow from '@/components/ChatWindow';
-import { Messages } from '@/interfaces/messages';
+import { Messages } from '@/components/messages/Messages.interface';
 import Loading from '@/components/Loading';
+import { getRandomJoke } from '@/services/joke-api';
 
 export default function Chat() {
   const [selected, setSelected] = useState('');
@@ -26,8 +26,7 @@ export default function Chat() {
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const { data } = await axios.get(`https://official-joke-api.appspot.com/jokes/${selected}/random`);
-      return data;
+      return getRandomJoke(selected);
     },
     onSuccess: (data) => {
       setSetup(data[0].setup);

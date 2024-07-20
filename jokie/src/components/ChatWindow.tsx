@@ -1,7 +1,7 @@
 'use client';
 
-import { MessagesProps } from '@/interfaces/messages';
-import Message from './Message';
+import { MessagesProps } from './messages/Messages.interface';
+import Message from './messages/Message';
 
 export default function ChatWindow({ messages }: MessagesProps) {
   return (

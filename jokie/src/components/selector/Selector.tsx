@@ -5,23 +5,14 @@ import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import Loading from './Loading';
-
-interface SelectorProps {
-  selected?: string;
-  setSelected: React.Dispatch<React.SetStateAction<string>>;
-}
-
-async function fetchJokes() {
-  const { data } = await axios.get('https://official-joke-api.appspot.com/types');
-  return data;
-}
+import Loading from '../Loading';
+import { getTypesJokes } from '@/services/joke-api';
+import SelectorProps from './SelectorProps.interface';
 
 export default function Selector({ selected, setSelected }: SelectorProps) {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['jokesTypes'],
-    queryFn: fetchJokes,
+    queryFn: getTypesJokes,
   });
 
   useEffect(() => {

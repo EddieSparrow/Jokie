@@ -1,6 +1,6 @@
 'use client';
 
-import { Messages } from '@/interfaces/messages';
+import { Messages } from './Messages.interface';
 
 interface MessageProps {
   message: Messages;
