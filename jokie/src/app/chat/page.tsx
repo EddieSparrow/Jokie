@@ -4,9 +4,9 @@ import Selector from '@/components/selector/Selector';
 import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import ChatWindow from '@/components/ChatWindow';
+import ChatWindow from '@/components/chatWindow/ChatWindow';
 import { Messages } from '@/components/messages/Messages.interface';
-import Loading from '@/components/Loading';
+import Loading from '@/components/loading/Loading';
 import { getRandomJoke } from '@/services/joke-api';
 
 export default function Chat() {

@@ -5,7 +5,7 @@ import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import Loading from '../Loading';
+import Loading from '../loading/Loading';
 import { getTypesJokes } from '@/services/joke-api';
 import SelectorProps from './SelectorProps.interface';
 
