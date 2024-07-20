@@ -17,10 +17,6 @@ const config: Config = {
         'main-gradient': 'linear-gradient(to bottom, rgba(255, 184, 0, 0.2), rgba(255, 184, 0, 0.05))',
         arrow: "url('/arrow.svg')",
       },
-      screens: {
-        sm: '0',
-        md: '431px',
-      },
     },
   },
   plugins: [],

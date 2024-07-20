@@ -47,7 +47,7 @@ export default function Chat() {
   }
 
   return (
-    <main className="flex flex-col bg-main-gradient min-h-screen pb-[25px] pt-[30px] px-[30px] md:p-[30px] align-center justify-between max-h-screen">
+    <div className="flex flex-col bg-main-gradient min-h-screen pb-[25px] pt-[30px] px-[30px] sm:p-[30px] align-center justify-between max-h-screen">
       <div className="flex justify-between">
         <Link href="/">
           <button className="btn text-center w-[50px] h-[50px] bg-arrow bg-auto bg-no-repeat bg-center" />
@@ -58,12 +58,12 @@ export default function Chat() {
         <ChatWindow messages={messages} />
       </div>
       {!isLoading && selected ? (
-        <button className="btn text-center text-[2rem] mt-[2.5rem] md:mt-[1.875rem] h-[60px] md:ml-[0.5rem] shrink-0" onClick={handleGetJoke}>
+        <button className="btn text-center text-[2rem] mt-[2.5rem] sm:mt-[1.875rem] h-[60px] sm:ml-[0.5rem] shrink-0" onClick={handleGetJoke}>
           Get joke
         </button>
       ) : (
         <Loading />
       )}
-    </main>
+    </div>
   );
 }
