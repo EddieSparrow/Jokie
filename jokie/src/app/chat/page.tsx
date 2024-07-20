@@ -3,7 +3,7 @@
 import Selector from '@/components/selector/Selector';
 import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import ChatWindow from '@/components/chatWindow/ChatWindow';
 import { Messages } from '@/components/messages/Messages.interface';
 import Loading from '@/components/loading/Loading';
@@ -45,6 +45,8 @@ export default function Chat() {
     mutation.mutate();
   }
 
+  const canGetJoke = useMemo(() => !isLoading && selected, [isLoading, selected]);
+
   return (
     <div className="flex flex-col bg-main-gradient min-h-screen pb-[25px] pt-[30px] px-[30px] sm:p-[30px] align-center justify-between max-h-screen">
       <div className="flex justify-between">
@@ -56,7 +58,7 @@ export default function Chat() {
       <div className="flex flex-col flex-grow overflow-auto justify-end">
         <ChatWindow messages={messages} />
       </div>
-      {!isLoading && selected ? (
+      {canGetJoke ? (
         <button className="btn text-center text-[2rem] mt-[2.5rem] sm:mt-[1.875rem] h-[60px] sm:ml-[0.5rem] shrink-0" onClick={handleGetJoke}>
           Get joke
         </button>
